@@ -1,15 +1,17 @@
-int DIM = 3;
-
+import peasy.*;
+int DIM = 32;
+PeasyCam cam;
 
 void setup() {
   size (600, 600, P3D);
   windowMove (1200, 100);
+  cam= new PeasyCam (this, 500);
 }
 
 void draw() {
   background (0) ;
-  translate (width / 2, height / 2);
-    for (int i = 0; i < DIM; i++) {
+
+  for (int i = 0; i < DIM; i++) {
     for (int j = 0; j< DIM; j++) {
       for (int k = 0; k< DIM; k++) {
         float x = map (i, 0, DIM, -100, 100);
